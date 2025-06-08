@@ -7,9 +7,17 @@ redirect_from:
   - /about.html
 ---
 
-Hi! My name is Austin. I'm an engineer, student, and weightlifter. I'm currently located in Texas, where I'm working on a Master's of Science in aerospace engineering at Texas A&M University; but, I am originally from Fargo, ND where I completed my Bachelor's in mechanical engineering from North Dakota State University. In my current work, I investigate indirect optimal control methods and approximation theory applied to astrodynamics problems with my advisor, Dr. John Junkins. Previously in my career I worked as a mechanical design engineer at Crary Industries in West Fargo, ND, which is a local agricultural machinery company that manufactures a variety of harvesting and water management equipment. During my undergrad at NDSU, I worked on a wide variety of academic projects, including control systems and thermodynamic testing fixtures. Outside of my professional life, I am also the head coach of the Texas A&M weightlifting team and a weightlifting coach at Brazos Valley Barbell. I earned my USA Weightlifting Level 1 Coaching certification in April 2024, and since then I've been able to bring the Texas A&M men's team to a 7th place finish at the 2024 National University Championships. I am also working on a web-based, data-driven weightlifting coaching application with my friend and developer, David Lindberg, which can be found at app.widmertraining.com. While weightlifting training and coaching takes up a majority of my free time, my other hobbies include 3D printing, custom apparel design and printing, spending time outside with my dog, Bear, and some occasional gaming, fishing, carpentry, CNC design, and a handful of other niche activities. 
+Hi! My name is Austin. I'm an engineer, student, and weightlifter. I'm currently located in Texas, where I'm working on a Master's of Science in aerospace engineering at Texas A&M University; but, I am originally from Fargo, ND where I completed my Bachelor's in mechanical engineering from North Dakota State University. In my current work, I investigate indirect optimal control methods and approximation theory applied to astrodynamics problems with my advisor, Dr. John Junkins. Previously in my career I worked as a mechanical design engineer at Crary Industries in West Fargo, ND, which is a local agricultural machinery company that manufactures a variety of harvesting and water management equipment. During my undergrad at NDSU, I worked on a wide variety of academic projects, including control systems and thermodynamic testing fixtures. 
 
+![NDSU with Mom & Dad](../images/NDSUparents.jpg)
 
+Outside of my professional life, I am also the head coach of the Texas A&M weightlifting team and a weightlifting coach at Brazos Valley Barbell. I earned my USA Weightlifting Level 1 Coaching certification in April 2024, and since then I've been able to bring the Texas A&M men's team to a 7th place finish at the 2024 National University Championships. I am also working on a web-based, data-driven weightlifting coaching application with my friend and developer, David Lindberg, which can be found at [app.widmertraining.com](app.widmertraining.com). 
+
+![Aggie Weightlifting](../images/KilosandKegs.jpg)
+
+While weightlifting training and coaching takes up a majority of my free time, my other hobbies include 3D printing, custom apparel design and printing, spending time outside with my dog, a belgian shepherd/lab mix named Bear, and some occasional gaming, fishing, carpentry, CNC design, and a handful of other niche activities. 
+
+![Bear](../images/Bear.jpg)
 
 
 
