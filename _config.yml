@@ -22,11 +22,11 @@ repository               : "austinwidmer/austinwidmer.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "AW_profile.jpg"
   name             : "Austin Widmer"
   pronouns         : # example: "she/her"  
   bio              : "Engineer. Student. Weightlifter."
-  location         : "Earth"
+  location         : "College Station, Texas"
   employer         : "Texas A&M University"
   uri              : # URL
   email            : "austin.widmer@tamu.edu" 

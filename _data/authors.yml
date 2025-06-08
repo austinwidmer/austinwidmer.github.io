@@ -1,18 +1,18 @@
 # Authors
 
-Name Name:
-  name        : "Name Name"
+Austin Widmer:
+  name        : "Austin Widmer"
   uri         : "http://name.com"
-  email       : "name@name.com"
-  bio         : "This is the first name."
-  avatar      : "bio-photo-2.jpg"
-  twitter     : "name"
-  google_plus : "Name"
+  email       : "austin.widmer4@gmail.com"
+  bio         : "Engineer. Student. Weightlifter."
+  avatar      : "AW_profile.jpg"
+  # twitter     : "name"
+  # google_plus : "Name"
 
-Name2 Name2:
-  name        : "Name2 Name2"
-  email       : "name2@name2.com"
-  bio         : "I ordered what?"
-  avatar      : "bio-photo.jpg"
-  twitter     : "name2"
-  google_plus : "Name"
+# Name2 Name2:
+  # name        : "Name2 Name2"
+  # email       : "name2@name2.com"
+  # bio         : "I ordered what?"
+  # avatar      : "bio-photo.jpg"
+  # twitter     : "name2"
+  # google_plus : "Name"
