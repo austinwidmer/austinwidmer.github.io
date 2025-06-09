@@ -11,7 +11,7 @@ Hi! My name is Austin. I'm an engineer, student, and weightlifter. I'm currently
 
 ![NDSU with Mom & Dad](../images/NDSUparents.jpg)
 
-Outside of my professional life, I am also the head coach of the Texas A&M weightlifting team and a weightlifting coach at Brazos Valley Barbell. I earned my USA Weightlifting Level 1 Coaching certification in April 2024, and since then I've been able to bring the Texas A&M men's team to a 7th place finish at the 2024 National University Championships. I am also working on a web-based, data-driven weightlifting coaching application with my friend and developer, David Lindberg, which can be found at [app.widmertraining.com](app.widmertraining.com). 
+Outside of my professional life, I am also the head coach of the Texas A&M weightlifting team and a weightlifting coach at Brazos Valley Barbell. I earned my USA Weightlifting Level 1 Coaching certification in April 2024, and since then I've been able to bring the Texas A&M men's team to a 7th place finish at the 2024 National University Championships. I am also working on a web-based, data-driven weightlifting coaching application with my friend and developer, David Lindberg, which can be found at [app.widmertraining.com](https://app.widmertraining.com). 
 
 ![Aggie Weightlifting](../images/KilosandKegs.jpg)
 
