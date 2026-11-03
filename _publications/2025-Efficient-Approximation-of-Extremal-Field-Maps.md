@@ -7,8 +7,8 @@ excerpt: 'Improving on previous work, extremal field maps are generated for volu
 date: 2025-08-13
 venue: '2025 AAS/AIAA Astrodynamics Specialist Conference'
 slidesurl: 'http://austinwidmer.github.io/files/AAS2025Poster.pdf'
-paperurl: 'http://austinwidmer.github.io/files/WidmerJunkins_Efficient_EFMs_AAS_25-839.pdf'
-bibtexurl: 'http://austinwidmer.github.io/files/AAS2025Cite.bib'
+paperurl: 'https://austinwidmer.github.io/files/WidmerJunkins_Efficient_EFMs_AAS_25-839.pdf'
+bibtexurl: 'https://austinwidmer.github.io/files/AAS2025Cite.bib'
 citation: 'Widmer A, and Ahrens, T, and Junkins, John L. (2025). &quot;Efficient Approximation of Extremal Field Maps Using Mesh-Free Interpolation Methods&quot; <i>2025 AAS/AIAA Astrodynamics Specialist Conference</i>.'
 ---
-The contents above will be part of a list of publications, if the user clicks the link for the publication than the contents of section will be rendered as a full page, allowing you to provide more information about the paper for the reader. When publications are displayed as a single page, the contents of the above "citation" field will automatically be included below this section in a smaller font.
+This work extends the extremal field map approach with mesh-free interpolation methods, reducing the generation process to a single nonlinear program.
