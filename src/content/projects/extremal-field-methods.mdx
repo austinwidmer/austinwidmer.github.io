@@ -1,0 +1,67 @@
+---
+type: article
+title: "Onboard Trajectory Re-Optimization Using Extremal Field Methods"
+description: "Master's thesis research applying extremal field methods to spacecraft guidance and minimum-fuel trajectory optimization."
+dateAdded: "2026-11-03"
+tags:
+  - Astrodynamics
+  - Optimal control
+  - Guidance
+---
+
+## About this work
+
+Low-thrust spacecraft missions often leverage the indirect optimal control methods to design their initial trajectories and guidance strategies, but the computational requirements of these methods 
+prohibits them from being used as an onboard guidance and control algorithm. Extremal field methods offer a solution to this by precomuputing optimal solutions and storing them as 
+extremal field maps (EFMs), which can provide optimal guidance solution estimates without needing to solve a boundary value problem. Much of the published research on this topic 
+attempted to train deep neural networks with large data sets to accurately approximate the extremal field; however, the approach I proposed instead used multivariate least-squares 
+estimators with minimal data requirements. The tradeoff is that the guidance estimate will necessarily be less precise than the neural network's, but the pivotal discovery of this work 
+is the effectiveness of generating an optimal trajectory in reverse by estimating the optimal parameters at the target state rather than the current state. This necessitates the implementation 
+of a single propagation operation, costing much more than the DNN estimate, but much less than solving the full boundary value problem required by traditional indirect optimal control methods. 
+Combining this method with a sliding-mode feedback controller enables robust trajectory re-optimization in the presence of disturbances and uncertainties, allowing a priori 
+trajectory optimization to provide near-optimal onboard guidance and control during the mission execution.
+
+<figure className="not-prose mx-auto mb-10 space-y-3 w-2/3">
+  <img
+    src="/figures/minimum-fuel-efm/efm-nominal-trajectory.jpg"
+    alt="Nominal trajectory generated using extremal field methods"
+    className="w-full rounded-md border border-border"
+  />
+  <figcaption className="text-sm text-muted-foreground">
+    Fig. 1: Nominal trajectory for a minimum-fuel guidance case.
+  </figcaption>
+</figure>
+
+The proposed extremal field guidance framework is highly applicable to low-thrust spacecraft missions where onboard thrust is limited but precise trajectory control is essential for mission success. 
+For a spacecraft with a 1.5 Newton thrust capability flying a low-thrust L1 halo to L2 halo minimum-fuel orbit transfer in the circular restricted three body problem, an indirect optimal control trajectory can be computed offline 
+to generate a nominal extremal (Fig. 1). Using the terminal state and costate data, a family of neighboring solutions can be rapidly constructed, and their deviations from the nominal trajectory are stored and used to construct 
+a set of local least squares estimators which produce estimates of the terminal costate values for the optimal trajectory corresponding to the spacecraft's current state (Fig. 2). This estimate is then used to generate 
+a full extremal trajectory, which can then be tracked by a spacecraft's onboard feedback controller, which can be much simpler than one required for direct onboard trajectory optimization. The process of generating 
+a new off-nominal extremal and tracking it to the target state is shown in Fig. 3. This approach allows for re-optimization of trajectories using the indirect methods without the need for heavy computations mid-mission, 
+and when compared to the alternative of tracking only the nominal trajectory without re-optimization, the extremal field guidance framework provides significantly improved robustness and 5-40% fuel savings 
+due to reduced feedback control effort.
+
+<div className="not-prose grid gap-6 md:grid-cols-2">
+  <figure className="space-y-3">
+    <video className="mx-auto aspect-[4/5] w-3/4 rounded-md border border-border bg-black object-cover object-center" autoplay muted loop controls playsInline preload="metadata" poster="/figures/minimum-fuel-efm/efm-nominal-trajectory.jpg">
+      <source src="/figures/minimum-fuel-efm/efm-data-generation.mp4" type="video/mp4" />
+    </video>
+    <figcaption className="text-sm text-muted-foreground"> 
+      Fig. 2: Extremal field data generation. 
+    </figcaption>
+  </figure>
+  <figure className="space-y-3">
+    <video className="mx-auto aspect-[4/5] w-3/4 rounded-md border border-border bg-black object-cover object-center" autoplay muted loop controls playsInline preload="metadata" poster="/figures/minimum-fuel-efm/efm-nominal-trajectory.jpg">
+      <source src="/figures/minimum-fuel-efm/efm-forward-simulation.mp4" type="video/mp4" />
+    </video>
+    <figcaption className="text-sm text-muted-foreground">
+      Fig. 3: Forward simulation using the guidance field.
+    </figcaption>
+  </figure>
+</div>
+
+The extremal field guidance framework shows promise for use in low-thrust spacecraft missions, especially those which might need repeatable trajectory optimizations from initial conditions which are approximately
+known but are subject to uncertainties and disturbances. Station keeping, long duration missions, multi-objective missionsm and other applications might all benefit from the 
+extremal field method's ability to rapidly generate and track off-nominal extremal trajectories in the presence of uncertainties and disturbances. More information on this project can be found in 
+<a href="/publications" rel="noreferrer">my publications from 2024-2026.</a>
+

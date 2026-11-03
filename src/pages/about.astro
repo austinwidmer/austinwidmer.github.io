@@ -1,0 +1,109 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import ndsuPhoto from "@/assets/images/profile/NDSUparents.jpg";
+import coachingPhoto from "@/assets/images/profile/KilosandKegs.jpg";
+import bearPhoto from "@/assets/images/profile/Bear.jpg";
+
+const metadata = {
+  title: "About Austin Widmer",
+  description:
+    "A background in mechanical and aerospace engineering, astrodynamics research, and weightlifting coaching.",
+};
+---
+
+<BaseLayout {metadata}>
+  <article class="mx-auto max-w-4xl px-4 py-16 sm:px-6 md:py-20 lg:px-8">
+    <header class="max-w-3xl">
+      <p class="text-sm font-semibold uppercase text-primary">About</p>
+      <h1 class="mt-3 text-4xl font-semibold sm:text-5xl">
+        Austin Widmer
+      </h1>
+      <p class="mt-6 text-xl leading-relaxed text-muted-foreground">
+        I am an engineer and weightlifting coach from Fargo, North Dakota, now studying aerospace engineering at Texas A&amp;M University. 
+      </p>
+    </header>
+
+    <div class="prose prose-lg mt-12 max-w-none dark:prose-invert">
+      <p>
+        In 2022, I earned a bachelor's degree in mechanical engineering from North Dakota
+        State University. I spent a year designing agricultural machinery at Crary Industries, 
+        in West Fargo, ND, before deciding to pursue a graduate degree.
+        I then moved to Texas to pursue a master's degree in aerospace engineering at Texas A&amp;M University.
+        During my graduate studies, I focused on optimal control theory and its applications to aerospace systems, 
+        studying under Dr. John L. Junkins. I completed my master's of science in 2026, and have choosen 
+        to continue working towards a doctoral degree in aerospace engineering.
+      </p>
+      <p>
+        My engineering experience has spanned a handful of different fields. I currently work at 
+        the Aerospace Corporation as a graduate student intern, where I contribute to the development 
+        of optimization and astrodynamics software tools for aerospace applications. My academic research 
+        focuses on many of the same techniques, leveraging optimal control theory and advanced computational methods 
+        to solve trajectory optimization problems in astrodynamics contexts.
+      </p>
+      <p>
+        In my mechanical engineering career, I gained hands-on experience in designing and analyzing large-scale 
+        machinery and hydraulic systems. Mechanical design, material selection &amp; analysis, and design for manufacturing 
+        were central to my work, providing a very practical foundation for my current work in aerospace engineering.
+      </p>
+      <p>
+        Outside of engineering and academia, I have always pursued athletic endeavors. In high school, 
+        I competed in the track &amp; field throwing events, which lead me to develop an interest in 
+        strength training and the sport of (olympic-style) weightlifting. During my undergraduate studies, 
+        I began competing in weightlifting, and soon after began coaching other athletes in the sport. 
+        When I moved to Texas A&amp;M University, I got involved with the Texas A&amp;M University weightlifting club,
+        and soon after I filled the role of head coach for the club. Since then we've been able to grow the program from 
+        less than 10 athletes to more than 30, and have been able to attend the University National Championships several times. 
+        You can learn more about the club at: <a href="https://tamuweightlifting.com" target="_blank" rel="noreferrer"> https://tamuweightlifting.com</a>.
+      </p>
+      <!-- <p>
+        I also collaborated with developer David Lindberg on a web-based,
+        data-driven weightlifting coaching application:
+        <a href="https://app.widmertraining.com" target="_blank" rel="noreferrer">
+          Widmer Training</a
+        >.
+      </p> -->
+      <p>
+        When I'm not engaged in engineering, coaching, or training, I enjoy working on a handful of hobbies, including 3D printing, 
+        custom apparel design, carpentry, CNC projects, and spending time outdoors with my dog, Bear.
+      </p>
+    </div>
+
+    <div class="mt-14 grid gap-6 sm:grid-cols-2">
+      <figure>
+        <Image
+          src={ndsuPhoto}
+          alt="Austin with his parents at North Dakota State University"
+          class="aspect-[4/3] w-full object-cover"
+          widths={[480, 720]}
+          sizes="(min-width: 640px) 45vw, 90vw"
+        />
+        <figcaption class="mt-2 text-sm text-muted-foreground">
+          North Dakota State University
+        </figcaption>
+      </figure>
+      <figure>
+        <Image
+          src={coachingPhoto}
+          alt="Texas A&M weightlifting team"
+          class="aspect-[4/3] w-full object-cover"
+          widths={[480, 720]}
+          sizes="(min-width: 640px) 45vw, 90vw"
+        />
+        <figcaption class="mt-2 text-sm text-muted-foreground">
+          Aggie weightlifting
+        </figcaption>
+      </figure>
+      <figure class="sm:col-span-2 sm:max-w-xl">
+        <Image
+          src={bearPhoto}
+          alt="Bear, Austin's dog"
+          class="aspect-[16/9] w-full object-cover"
+          widths={[480, 720, 960]}
+          sizes="(min-width: 640px) 70vw, 90vw"
+        />
+        <figcaption class="mt-2 text-sm text-muted-foreground">Bear</figcaption>
+      </figure>
+    </div>
+  </article>
+</BaseLayout>

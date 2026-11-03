@@ -1,0 +1,162 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const metadata = {
+  title: "Experience and Skills | Austin Widmer",
+  description:
+    "Education, engineering experience, research, certifications, and technical skills.",
+};
+
+const experience = [
+  {
+    role: "Graduate Student Intern",
+    organization: "The Aerospace Corporation",
+    dates: "May 2025 - Present",
+    detail: "Optimization and astrodynamics tool development.",
+  },
+  {
+    role: "Graduate Research Assistant",
+    organization: "Texas A&M University",
+    dates: "January 2024 - Present",
+    detail:
+      "Research in astrodynamics, indirect optimal control, and approximation theory; advised by Dr. John L. Junkins.",
+  },
+  {
+    role: "Mechanical Design Engineer",
+    organization: "Crary Industries",
+    dates: "February 2023 - December 2023",
+    detail: "Agricultural machinery and hydraulic systems design.",
+  },
+];
+
+const skills = [
+  {
+    title: "Astrodynamics and control",
+    items: [
+      "Two- and three-body problems with perturbations",
+      "Ephemeris and medium-fidelity models",
+      "Indirect and direct optimal control methods",
+      "Extremal field maps and numerical approximation",
+    ],
+  },
+  {
+    title: "Programming",
+    items: ["MATLAB", "Python", "C++", "HTML and CSS", "Java"],
+  },
+  {
+    title: "Mechanical design",
+    items: [
+      "Creo Parametric, Autodesk Inventor, and SolidWorks",
+      "Finite element analysis and design for manufacturing",
+      "Additive manufacturing, machining, and welding",
+    ],
+  },
+];
+---
+
+<BaseLayout {metadata}>
+  <main class="mx-auto max-w-5xl px-4 py-16 sm:px-6 md:py-20 lg:px-8">
+    <header class="mb-12 max-w-3xl">
+      <p class="text-sm font-semibold uppercase text-primary">Experience</p>
+      <h1 class="mt-3 text-4xl font-semibold sm:text-5xl">Engineering and research</h1>
+      <p class="mt-5 text-lg leading-relaxed text-muted-foreground">
+        Aerospace research, mechanical design, and technical work across
+        industry and academia.
+      </p>
+    </header>
+
+    <section class="border-t border-border py-10" aria-labelledby="education-title">
+      <h2 id="education-title" class="text-2xl font-semibold">Education</h2>
+      <div class="mt-6 grid gap-5 sm:grid-cols-2">
+        <div>
+          <h3 class="text-lg font-semibold">Texas A&amp;M University</h3>
+          <p class="mt-1 text-muted-foreground">M.S. in Aerospace Engineering · December 2026</p>
+          <p class="mt-1 text-muted-foreground">Ph.D. in Aerospace Engineering · Expected 2028</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold">North Dakota State University</h3>
+          <p class="mt-1 text-muted-foreground">
+            B.S. in Mechanical Engineering · December 2022
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-t border-border py-10" aria-labelledby="work-title">
+      <h2 id="work-title" class="text-2xl font-semibold">Work and research</h2>
+      <div class="mt-6 divide-y divide-border">
+        {experience.map((item) => (
+          <article class="grid gap-2 py-5 sm:grid-cols-[13rem_1fr] sm:gap-8">
+            <p class="text-sm text-muted-foreground">{item.dates}</p>
+            <div>
+              <h3 class="text-lg font-semibold">{item.role}</h3>
+              <p class="text-primary">{item.organization}</p>
+              <p class="mt-2 leading-relaxed text-muted-foreground">{item.detail}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="border-t border-border py-10" aria-labelledby="certifications-title">
+      <h2 id="certifications-title" class="text-2xl font-semibold">Certifications</h2>
+      <ul class="mt-5 space-y-3 text-muted-foreground">
+        <li>
+          NCEES North Dakota Fundamentals of Engineering, Mechanical
+          <a
+            class="ml-1 font-semibold text-foreground underline decoration-primary underline-offset-4"
+            href="https://account.ncees.org/rn/2332254-1612676-2445139"
+            target="_blank"
+            rel="noreferrer">Verification</a
+          >
+        </li>
+        <li>USA Weightlifting Level 1 Coach · 2024</li>
+        <li>USA Weightlifting Level 2 Coach · 2025</li>
+      </ul>
+    </section>
+
+    <section class="border-t border-border py-10" aria-labelledby="business-title">
+      <h2 id="business-title" class="text-2xl font-semibold">My Business</h2>
+      <ul class="mt-5 space-y-3 text-muted-foreground">
+        <h3 class="font-semibold"> Legendary Strength &amp; Conditioning LLC</h3>
+        <li> Website: coming soon </li>
+        <!-- <li>
+          <a
+            class="ml-1 font-semibold text-foreground underline decoration-primary underline-offset-4"
+            href="https://legendarybarbell.com"
+            target="_blank"
+            rel="noreferrer">Website</a
+          >
+        </li>
+        <li>
+          <a
+            class="ml-1 font-semibold text-foreground underline decoration-primary underline-offset-4"
+            href="https://legendarybarbell.com"
+            target="_blank"
+            rel="noreferrer">App</a
+          >
+        </li> -->
+      </ul>
+    </section>
+
+    <section class="border-t border-border py-10" aria-labelledby="skills-title">
+      <h2 id="skills-title" class="text-2xl font-semibold">Technical skills</h2>
+      <div class="mt-6 grid gap-8 sm:grid-cols-2">
+        {skills.map((group) => (
+          <div>
+            <h3 class="font-semibold">{group.title}</h3>
+            <ul class="mt-3 space-y-2 text-sm leading-relaxed text-muted-foreground">
+              {group.items.map((skill) => <li>{skill}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <p class="border-t border-border pt-6 text-sm text-muted-foreground">
+      <a class="font-semibold text-foreground underline decoration-primary underline-offset-4" href="/publications/">
+        View publications
+      </a>
+    </p>
+  </main>
+</BaseLayout>
