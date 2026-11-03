@@ -1,10 +1,14 @@
-name: CI
+name: CI and Deploy
+
 on:
   push:
-    branches: [main]
+    branches: [master]
     paths-ignore:
       - ".github/data/**"
   pull_request:
+
+permissions:
+  contents: read
 
 jobs:
   build:
@@ -33,3 +37,25 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Upload Pages artifact
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
