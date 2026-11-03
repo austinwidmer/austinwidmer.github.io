@@ -1,0 +1,49 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const metadata = {
+  title: "Publications | Austin Widmer",
+  description:
+    "Research papers on extremal field maps, astrodynamics, and approximation methods.",
+};
+const publications = (await getCollection("publications")).sort(
+  (first, second) => second.data.pubDate.getTime() - first.data.pubDate.getTime(),
+);
+---
+
+<BaseLayout {metadata}>
+  <main class="mx-auto max-w-5xl px-4 py-16 sm:px-6 md:py-20 lg:px-8">
+    <header class="mb-12 max-w-3xl">
+      <p class="text-sm font-semibold uppercase text-primary">Research</p>
+      <h1 class="mt-3 text-4xl font-semibold sm:text-5xl">Publications</h1>
+      <p class="mt-5 text-lg leading-relaxed text-muted-foreground">
+        Research on extremal field maps and computational methods for astrodynamics.
+      </p>
+    </header>
+    <div class="divide-y divide-border border-y border-border">
+      {publications.map((publication) => (
+        <article class="py-8">
+          <p class="text-sm text-muted-foreground">
+            {publication.data.pubDate.getFullYear()} · {publication.data.venue}
+          </p>
+          <h2 class="mt-2 text-2xl font-semibold">{publication.data.title}</h2>
+          <p class="mt-3 max-w-3xl leading-relaxed text-muted-foreground">
+            {publication.data.description}
+          </p>
+          <p class="mt-3 max-w-3xl text-sm leading-relaxed">
+            {publication.data.citation}
+          </p>
+          <nav
+            class="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold"
+            aria-label={`Downloads for ${publication.data.title}`}
+          >
+            {publication.data.paperUrl && <a class="underline decoration-primary underline-offset-4" href={publication.data.paperUrl}>Paper</a>}
+            {publication.data.posterUrl && <a class="underline decoration-primary underline-offset-4" href={publication.data.posterUrl}>Poster</a>}
+            {publication.data.bibtexUrl && <a class="underline decoration-primary underline-offset-4" href={publication.data.bibtexUrl}>BibTeX</a>}
+          </nav>
+        </article>
+      ))}
+    </div>
+  </main>
+</BaseLayout>

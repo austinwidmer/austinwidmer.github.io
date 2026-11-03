@@ -1,0 +1,77 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+}
+
+:root {
+  color-scheme: light;
+  --background: #f7f9f7;
+  --foreground: #182522;
+  --primary: #b94a30;
+  --border: #dce4df;
+  --muted: #edf2ee;
+  --muted-foreground: #52615b;
+  --card: #ffffff;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #111b18;
+  --foreground: #edf3ef;
+  --primary: #ee9473;
+  --border: #30413a;
+  --muted: #1c2a25;
+  --muted-foreground: #afbeb6;
+  --card: #15221d;
+}
+
+/* Base styles using variables */
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: "Aptos", "Trebuchet MS", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    letter-spacing: 0;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
+}
+
+/* Animations - Reveal on Scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Prevent double-bounce conflicts when Astro View Transitions is actively animating */
+:root[data-astro-transition] .reveal {
+  transition: none !important;
+}
